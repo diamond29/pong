@@ -1,11 +1,27 @@
 import _ from 'lodash';
+import phaser from 'phaser';
 
-function component() {
-  var element = document.createElement('div');
+const gameProperties = {
+  screenWidth: 640,
+  screenHeight: 480,
+};
 
-  element.innerHTML = _.join([...['Hello', 'webpack'], 'how are you'], ' ');
+var mainState = function(game){};
 
-  return element;
-}
+mainState.prototype = {
+  preload: function () {
 
-document.body.appendChild(component());
+  },
+
+  create: function () {
+
+  },
+
+  update: function () {
+
+  },
+};
+
+var game = new Phaser.Game(gameProperties.screenWidth, gameProperties.screenHeight, Phaser.AUTO, 'gameDiv');
+game.state.add('main', mainState);
+game.state.start('main');
